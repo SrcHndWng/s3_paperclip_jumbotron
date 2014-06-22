@@ -1,0 +1,15 @@
+<div class="container">
+  <!-- Example row of columns -->
+  <% @articles.each_with_index {|article, i| %>
+    <% if i % 3 == 0 %>
+      <div class="row">
+    <% end %>
+
+      <%= render(:partial => "article", :object => article) %>
+
+    <% if (i + 1) % 3 == 0 %>
+      </div>
+    <% end %>
+  <% } %>
+</div> <!-- /container -->
+<%= link_to 'New Article', new_article_path, { class: 'btn btn-primary btn-sm', style: 'color:white' } %>

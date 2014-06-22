@@ -1,0 +1,11 @@
+<div>
+  <p id="notice"><%= notice %></p>
+  <h2><%= @article.title %></h2>
+  <p>
+    <%= image_tag(@article.authenticated_image_url(:large)) if @article.image.present? %>
+  </p>
+  <p>
+    <%= link_to 'Edit', edit_article_path(@article), { class: 'btn btn-success btn-sm', style: 'color:white' } %>
+    <%= link_to 'Back', articles_path, { class: 'btn btn-info btn-sm', style: 'color:white' } %>
+  </p>
+</div>
